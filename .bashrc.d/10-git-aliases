@@ -1,0 +1,13 @@
+# vim: set ft=sh sw=2 ts=2 expandtab:
+
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -a -v'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git pull'
+alias glv="git log -p -40 | vim - -R -c 'set foldmethod=syntax'"
+alias gp='git push'
+alias gpr='git pull --rebase'
+alias gst='git status'
+alias gtree='git log --all --oneline --decorate --graph'
