@@ -77,6 +77,9 @@ if (has('gui_running'))
   set guioptions-=m
 endif
 
+" Highlight unwanted spaces
+set list listchars=tab:\ \ ,trail:·
+
 "=============================================
 " Remaps
 "=============================================
