@@ -1,5 +1,5 @@
 --type-set=cucumber=.feature
---type-add=html=.haml,.erb
+--type-add=html=.haml,.erb,.rhtml
 --type-add=ruby=.haml
 --type-add=css=.scss,.sass
 --type-add=js=.coffee
