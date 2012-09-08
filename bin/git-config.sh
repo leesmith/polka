@@ -18,30 +18,16 @@ global_config() {
   git config --global "$1" "$2"
 }
 
-read -p "Full name: " name
-read -p "Email address: " email
+read -p "Enter your global git user.name: " name
+read -p "Enter your global git user.email: " email
 
 global_config "user.name" "$name"
 global_config "user.email" "$email"
-
-global_config "color.ui" "true"
-
-global_config "core.excludesfile" "${HOME}/.cvsignore"
-
-global_config "alias.st" "status"
-global_config "alias.ci" "commit -v"
-global_config "alias.co" "checkout"
-global_config "alias.di" "diff"
-global_config "alias.dc" "diff --cached"
-global_config "alias.aa" "add --all"
-global_config "alias.amend" "commit -v --amend"
-global_config "alias.ff" "merge --ff-only"
-global_config "alias.fa" "fetch --all"
-global_config "alias.pom" "push origin master"
-global_config "alias.pum" "push upstream master"
-global_config "alias.tr" "log --all --oneline --decorate --graph"
 global_config "color.status.added" "green"
 global_config "color.status.changed" "yellow"
 global_config "color.status.untracked" "red"
+global_config "color.ui" "true"
+global_config "core.editor" "vim"
+global_config "core.excludesfile" "${HOME}/.gitignore"
 
 exit 0
