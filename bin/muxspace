@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Description
+# -----------
+# Script to create a new tmux session and basic two pane layout with vim
+# launched in the right-hand pane. The tmux session will get its name from the
+# directory you run the script in (usually a project directory).
+
+SESSION=$(basename $(pwd))
+tmux new-session -s $SESSION -d
+tmux split-window -h -p 60 -t $SESSION
+tmux send-keys -t $SESSION:0.1 'vim' C-m
+tmux attach -t $SESSION
