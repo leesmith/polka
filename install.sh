@@ -7,9 +7,13 @@ DIR="$( cd "$(dirname "$0" )" && pwd )"
 for dotfile in $(find $DIR -maxdepth 1 -type f -name ".*"); do
   if [[ $(uname) == 'Linux' && "$(basename $dotfile)" == '.tmux.linux.conf' ]]; then
     ln -fs $dotfile "${HOME}/.tmux.conf"
+  elif [[ $(uname) == 'Linux' && "$(basename $dotfile)" == '.bashrc-ubuntu' ]]; then
+    ln -fs $dotfile "${HOME}/.bashrc"
   elif [[ $(uname) == 'Darwin' && "$(basename $dotfile)" == '.tmux.osx.conf' ]]; then
     ln -fs $dotfile "${HOME}/.tmux.conf"
-  elif [[ "$(basename $dotfile)" != ".tmux.osx.conf" && "$(basename $dotfile)" != ".tmux.linux.conf" ]]; then
+  elif [[ $(uname) == 'Darwin' && "$(basename $dotfile)" == '.bashrc-osx' ]]; then
+    ln -fs $dotfile "${HOME}/.bashrc"
+  elif [[ ! "$(basename $dotfile)" =~ ^.tmux && ! "$(basename $dotfile)" =~ ^.bashrc- ]]; then
     ln -fs $dotfile "${HOME}/$(basename $dotfile)"
   fi
 done
