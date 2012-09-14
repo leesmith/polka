@@ -78,7 +78,7 @@ if (has('gui_running'))
 endif
 
 " Highlight unwanted spaces
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:»·,trail:·
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
