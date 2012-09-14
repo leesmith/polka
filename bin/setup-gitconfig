@@ -8,7 +8,7 @@ if [[ -s "${HOME}/.gitconfig" ]]; then
   read -n1 -p "${HOME}/.gitconfig already exists would you like to overwrite it? " answer
   echo
   if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
-    echo "Skipping git-config.sh"
+    echo "Skipping gitconfig setup"
     exit 0
   fi
   rm -f "${HOME}/.gitconfig"
@@ -23,6 +23,9 @@ read -p "Enter your global git user.email: " email
 
 global_config "user.name" "$name"
 global_config "user.email" "$email"
+
+global_config "branch.autosetuprebase" "always"
+global_config "pull.rebase" "true"
 global_config "color.status.added" "green"
 global_config "color.status.changed" "yellow"
 global_config "color.status.untracked" "red"
