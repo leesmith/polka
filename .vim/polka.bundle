@@ -11,6 +11,7 @@ mileszs ack.vim
 pangloss vim-javascript
 tpope vim-abolish
 tpope vim-bundler
+tpope vim-commentary
 tpope vim-cucumber
 tpope vim-endwise
 tpope vim-fugitive
