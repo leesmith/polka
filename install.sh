@@ -43,4 +43,4 @@ for bundle in ${DIR}/.vim/*.bundle; do
 done
 
 (exec "${DIR}/bin/setup-gitconfig")
-(exec "${DIR}/bin/vim-bundle")
+(exec "${DIR}/bin/vim-bundle" "--confirm")

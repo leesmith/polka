@@ -5,7 +5,7 @@
 set -e
 
 if [[ -s "${HOME}/.gitconfig" ]]; then
-  read -n1 -p "${HOME}/.gitconfig already exists would you like to overwrite it? " answer
+  read -n1 -p "${HOME}/.gitconfig already exists. Overwrite it? " answer
   echo
   if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
     echo "Skipping gitconfig setup"
