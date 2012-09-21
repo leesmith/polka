@@ -1,16 +1,11 @@
-adamlowe vim-slurper
 altercation vim-colors-solarized
-depuracao vim-rdoc
 duff vim-scratch
-godlygeek tabular
 jgdavey tslime.vim
 jgdavey vim-turbux
 kchmck vim-coffee-script
 Lokaltog vim-powerline
 mileszs ack.vim
 pangloss vim-javascript
-tpope vim-abolish
-tpope vim-bundler
 tpope vim-commentary
 tpope vim-cucumber
 tpope vim-endwise
@@ -21,9 +16,7 @@ tpope vim-markdown
 tpope vim-pathogen
 tpope vim-ragtag
 tpope vim-rails
-tpope vim-rake
 tpope vim-repeat
 tpope vim-surround
-tpope vim-unimpaired
 vim-ruby vim-ruby
 vim-scripts matchit.zip
