@@ -26,11 +26,49 @@ global_config "user.email" "$email"
 
 global_config "branch.autosetuprebase" "always"
 global_config "pull.rebase" "true"
+
 global_config "color.status.added" "green"
 global_config "color.status.changed" "yellow"
 global_config "color.status.untracked" "red"
 global_config "color.ui" "true"
+
 global_config "core.editor" "vim"
 global_config "core.excludesfile" "${HOME}/.gitignore"
+
+global_config "alias.st"    "status"
+global_config "alias.co"    "checkout"
+global_config "alias.aa"    "add --all"
+global_config "alias.fa"    "fetch --all"
+global_config "alias.ff"    "merge --ff-only"
+global_config "alias.b"     "branch"
+global_config "alias.ba"    "branch -a"
+
+global_config "alias.ci"    "commit -v"
+global_config "alias.amend" "commit -v --amend"
+
+global_config "alias.di"    "diff"
+global_config "alias.dc"    "diff --cached"
+global_config "alias.dh1"   "diff HEAD~1"
+
+global_config "alias.po"    "push origin"
+global_config "alias.pom"   "push origin master"
+global_config "alias.pu"    "push upstream"
+global_config "alias.pum"   "push upstream master"
+
+# Fancy logging.
+#   h = head
+#   hp = head with patch
+#   r = recent commits, only current branch
+#   ra = recent commits, all reachable refs
+#   l = all commits, only current branch
+#   la = all commits, all reachable refs
+
+global_config "alias.head"  "!git l -1"
+global_config "alias.h"     "!git head"
+global_config "alias.hp"    "!source ${HOME}/lib/githelpers && show_git_head"
+global_config "alias.r"     "!git l -30"
+global_config "alias.ra"    "!git r --all"
+global_config "alias.l"     "!source ${HOME}/lib/githelpers && pretty_git_log"
+global_config "alias.la"    "!git l --all"
 
 exit 0

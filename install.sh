@@ -24,7 +24,7 @@ for dotfile in ${DIR}/.bashrc.d/*; do
     ln -fs $dotfile "${HOME}/.bashrc.d/$(basename $dotfile)"
 done
 
-# Link programs files in bin
+# Link files in bin
 [ -d "${HOME}/bin" ] || mkdir "${HOME}/bin"
 for program in ${DIR}/bin/*; do
     [ -x $program ] || continue
@@ -32,15 +32,26 @@ for program in ${DIR}/bin/*; do
     ln -fs $program "${HOME}/bin/$(basename $program)"
 done
 
+# Link files in lib
+[ -d "${HOME}/lib" ] || mkdir "${HOME}/lib"
+for file in ${DIR}/lib/*; do
+    [ -x $file ] || continue
+    ln -fs $file "${HOME}/lib/$(basename $file)"
+done
+
 [ -d "${HOME}/.vim/bundles" ] || mkdir -p "${HOME}/.vim/bundles"
 [ -d "${HOME}/.vim/backups" ] || mkdir -p "${HOME}/.vim/backups"
 [ -d "${HOME}/.vim/swaps" ]   || mkdir -p "${HOME}/.vim/swaps"
 [ -d "${HOME}/.vim/undo" ]    || mkdir -p "${HOME}/.vim/undo"
 
-# Link bundles files in .vim
+# Link bundle files in .vim
 for bundle in ${DIR}/.vim/*.bundle; do
     ln -fs $bundle "${HOME}/.vim/$(basename $bundle)"
 done
 
+# Remove broken symlinks
+find -L -X "${HOME}" "${HOME}/.bashrc.d" "${HOME}/bin" "${HOME}/lib" -maxdepth 1 -type l | xargs rm
+
+# execute scripts on install
 (exec "${DIR}/bin/setup-gitconfig")
 (exec "${DIR}/bin/vim-bundle" "--confirm")
