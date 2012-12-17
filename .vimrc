@@ -124,6 +124,13 @@ nnoremap <localleader>/ :nohlsearch<CR>
 nnoremap <localleader>ws m`:%s/\s\+$//e<CR>``
 
 "=============================================
+" Autocommands
+"=============================================
+
+" Remove trailing whitespace on save of ruby files
+au BufWritePre *.rb :%s/\s\+$//e
+
+"=============================================
 " Additional Config Files
 "=============================================
 
