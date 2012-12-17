@@ -91,6 +91,9 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " Remove delay when pressing esc when in insert mode
 set noesckeys
 
+" Set tags file search order
+set tags=./tags;
+
 "=============================================
 " Remaps
 "=============================================
