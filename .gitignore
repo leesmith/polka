@@ -18,3 +18,7 @@ Session.vim
 # ruby
 .rbenv-version
 .rvmrc
+
+# ctags
+tags
+TAGS
