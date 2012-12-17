@@ -17,7 +17,7 @@ filetype plugin indent on
 "=============================================
 " Options
 "=============================================
-"
+
 " Enable utf-8
 set encoding=utf-8
 
@@ -87,6 +87,9 @@ set list listchars=tab:»·,trail:·
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Remove delay when pressing esc when in insert mode
+set noesckeys
 
 "=============================================
 " Remaps
