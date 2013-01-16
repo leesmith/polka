@@ -25,12 +25,9 @@ fi
 
 # Set prompt
 if [[ -d "${HOME}/.rbenv" ]]; then
-  #[ -z "$PS1" ] || export PS1="┌─[\[\033[32m\]\u\[\033[0m\]]─[\[\033[36m\]\w\[\033[0m\]]─[\[\033[34m\]\$(rbenv version-name)\[\033[0m\]]\$(git_prompt_info '─[\[\033[95m\]%b\[\033[0m\]]')\n└─> "
-  #[ -z "$PS1" ] || export PS1="[\[\033[32m\]\u\[\033[0m\]] [\[\033[36m\]\w\[\033[0m\]] [\[\033[34m\]\$(rbenv version-name)\[\033[0m\]]\$(git_prompt_info ' [\[\033[95m\]%b\[\033[0m\]]')\n❯ "
-  [ -z "$PS1" ] || export PS1="\[\033[32m\]\u\[\033[0m\]:\[\033[36m\]\w\[\033[0m\] \[\033[34m\]\$(rbenv version-name)\[\033[0m\]\$(git_prompt_info ' \[\033[95m\]%b\[\033[0m\]')\n❯ "
+  [ -z "$PS1" ] || export PS1="\[\033[32m\]\u\[\033[0m\] \[\033[36m\]\w\[\033[0m\] \[\033[34m\]\$(rbenv version-name)\[\033[0m\]\$(git_prompt_info ' \[\033[95m\]%b\[\033[0m\]')\n❯ "
 else
-  #[ -z "$PS1" ] || export PS1="┌─[\[\033[32m\]\u\[\033[0m\]]─[\[\033[36m\]\w\[\033[0m\]]\$(git_prompt_info '─[\[\033[34m\]%b\[\033[0m\]]')\n└─> "
-  [ -z "$PS1" ] || export PS1="\[\033[32m\]\u\[\033[0m\]:\[\033[36m\]\w\[\033[0m\] \[\033[34m\]\$(git_prompt_info ' \[\033[95m\]%b\[\033[0m\]')\n❯ "
+  [ -z "$PS1" ] || export PS1="\[\033[32m\]\u\[\033[0m\] \[\033[36m\]\w\[\033[0m\] \[\033[34m\]\$(git_prompt_info ' \[\033[95m\]%b\[\033[0m\]')\n❯ "
 fi
 
 prepend_path "${HOME}/bin"
