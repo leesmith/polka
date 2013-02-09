@@ -52,4 +52,3 @@ git_prompt_info () {
     fi
   fi
 }
-

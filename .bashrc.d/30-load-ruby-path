@@ -4,6 +4,7 @@ if [[ -d "${HOME}/.rbenv" ]]; then
   # RBENV
   prepend_path "${HOME}/.rbenv/bin"
   eval "$(rbenv init -)"
+  prepend_path "./bin"
 elif [[ -d "${HOME}/.rvm" ]]; then
   # RVM
   [[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm" # Load RVM function
