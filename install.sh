@@ -49,9 +49,15 @@ for bundle in ${DIR}/.vim/*.bundle; do
     ln -fs $bundle "${HOME}/.vim/$(basename $bundle)"
 done
 
+# Link rbenv default-gems
+[ -d "${HOME}/.rbenv" ] || mkdir "${HOME}/.rbenv"
+ln -fs ${DIR}/default-gems "${HOME}/.rbenv/default-gems"
+
 # Remove broken symlinks
 find -L "${HOME}" "${HOME}/.bashrc.d" "${HOME}/bin" "${HOME}/lib" -maxdepth 1 -type l | xargs rm 2>/dev/null
 
 # execute scripts on install
 (exec "${DIR}/bin/setup-gitconfig")
 (exec "${DIR}/bin/vim-bundle" "--confirm")
+
+echo "polka party was successful!"
