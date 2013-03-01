@@ -151,4 +151,5 @@ autocmd User Rails Rnavcommand factory spec/factories -suffix=_factory.rb -defau
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 autocmd User Rails Rnavcommand feature spec/features -suffix=_spec.rb
 autocmd User Rails Rnavcommand support spec/support features/support -default=env
+autocmd User Rails Rnavcommand serializer app/serializers -suffix=_serializer.rb
 autocmd User Rails Rnavcommand worker app/workers -suffix=_worker.rb -default=model()
