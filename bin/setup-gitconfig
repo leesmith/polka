@@ -27,6 +27,7 @@ global_config "user.email" "$email"
 global_config "branch.autosetuprebase" "always"
 global_config "pull.rebase" "true"
 global_config "push.default" "simple"
+global_config "merge.conflictstyle" "diff3"
 
 global_config "color.status.added" "green"
 global_config "color.status.changed" "yellow"
