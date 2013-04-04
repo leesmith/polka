@@ -94,8 +94,8 @@ set noesckeys
 " Set tags file search order
 set tags=./tags;
 
-" clear sign column for vim-gitgutter
-highlight clear SignColumn
+" set sign column for vim-gitgutter
+highlight SignColumn ctermbg=8
 
 "=============================================
 " Remaps
