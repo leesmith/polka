@@ -27,6 +27,9 @@ set background=dark
 colorscheme solarized
 syntax on
 
+" vim-poweline symbols
+let g:Powerline_symbols = 'fancy'
+
 " Turn off error bells
 set noerrorbells
 set visualbell
