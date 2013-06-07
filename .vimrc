@@ -146,16 +146,74 @@ if filereadable(expand('~/.vimrc.local'))
 endif
 
 "=============================================
-" Rails.vim extensions
+" Rails.vim projections
 "=============================================
 
-autocmd User Rails Rnavcommand decorator app/decorators -suffix=_decorator.rb -default=model()
-autocmd User Rails Rnavcommand presenter app/presenters -suffix=_presenter.rb -default=model()
-autocmd User Rails Rnavcommand uploader app/uploaders -suffix=_uploader.rb -default=model()
-autocmd User Rails Rnavcommand steps features/step_definitions -suffix=_steps.rb -default=web
-autocmd User Rails Rnavcommand factory spec/factories -suffix=_factory.rb -default=model()
-autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-autocmd User Rails Rnavcommand feature spec/features -suffix=_spec.rb
-autocmd User Rails Rnavcommand support spec/support features/support -default=env
-autocmd User Rails Rnavcommand serializer app/serializers -suffix=_serializer.rb
-autocmd User Rails Rnavcommand worker app/workers -suffix=_worker.rb -default=model()
+if !exists('g:rails_projections')
+  let g:rails_projections = {}
+endif
+
+call extend(g:rails_projections, {
+      \ "app/presenters/*.rb": {
+      \   "command": "presenter",
+      \   "test": "spec/presenter/%s_spec.rb",
+      \   "alternate": "spec/presenter/%s_spec.rb",
+      \   "template": "class %S\nend" },
+      \ "app/workers/*.rb": {
+      \   "command": "worker",
+      \   "template": "class %S\nend" }
+      \ }, 'keep')
+
+if !exists('g:rails_gem_projections')
+  let g:rails_gem_projections = {}
+endif
+
+call extend(g:rails_gem_projections, {
+      \ "active_model_serializers": {
+      \   "app/serializers/*_serializer.rb": {
+      \     "command": "serializer",
+      \     "template": "class %SSerializer < ActiveModel::Serializer\nend",
+      \     "affinity": "model"}},
+      \ "rspec": {
+      \   "spec/support/*.rb": {
+      \     "command": "support"}},
+      \ "cucumber": {
+      \   "features/*.feature": {
+      \     "command": "feature",
+      \     "template": "Feature: %h"},
+      \   "features/support/*.rb": {
+      \     "command": "support"},
+      \   "features/support/env.rb": {
+      \     "command": "support"},
+      \   "features/step_definitions/*_steps.rb": {
+      \     "command": "steps"}},
+      \ "carrierwave": {
+      \   "app/uploaders/*_uploader.rb": {
+      \     "command": "uploader",
+      \     "template": "class %SUploader < CarrierWave::Uploader::Base\nend"}},
+      \ "draper": {
+      \   "app/decorators/*_decorator.rb": {
+      \     "command": "decorator",
+      \     "affinity": "model",
+      \     "template": "class %SDecorator < ApplicationDecorator\nend"}},
+      \ "fabrication": {
+      \   "spec/fabricators/*_fabricator.rb": {
+      \     "command": ["fabricator", "factory"],
+      \     "alternate": "app/models/%s.rb",
+      \     "related": "db/schema.rb#%p",
+      \     "test": "spec/models/%s_spec.rb",
+      \     "template": "Fabricator :%s do\nend",
+      \     "affinity": "model"}},
+      \ "factory_girl": {
+      \   "spec/factories/*_factory.rb": {
+      \     "command": "factory",
+      \     "alternate": "app/models/%s.rb",
+      \     "related": "db/schema.rb#%p",
+      \     "test": "spec/models/%s_spec.rb",
+      \     "template": "FactoryGirl.define do\n  factory :%s do\n  end\nend",
+      \     "affinity": "model"},
+      \   "spec/factories.rb": {
+      \      "command": "factory"},
+      \   "test/factories.rb": {
+      \      "command": "factory"}}
+      \ }, 'keep')
