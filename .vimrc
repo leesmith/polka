@@ -4,6 +4,9 @@ scriptencoding utf-8
 " Initialization
 "=============================================
 
+" declare ruby path
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
 " Load pathogen if it is found
 if filereadable(expand('~/.vim/bundle/vim-pathogen/autoload/pathogen.vim'))
   source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
