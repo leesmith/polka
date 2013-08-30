@@ -30,8 +30,9 @@ set background=dark
 colorscheme solarized
 syntax on
 
-" vim-poweline symbols
-let g:Powerline_symbols = 'fancy'
+" vim-airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='solarized'
 
 " Turn off error bells
 set noerrorbells

@@ -1,11 +1,11 @@
 airblade vim-gitgutter
 altercation vim-colors-solarized
+bling vim-airline
 duff vim-scratch
 jgdavey tslime.vim
 jgdavey vim-turbux
 kchmck vim-coffee-script
 kien ctrlp.vim
-Lokaltog vim-powerline
 mileszs ack.vim
 pangloss vim-javascript
 SirVer ultisnips
