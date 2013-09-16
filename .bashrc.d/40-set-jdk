@@ -1,0 +1,8 @@
+# vim: set ft=sh sw=2 ts=2 expandtab:
+
+function setjdk() {
+  if [ $# -ne 0 ]; then
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+  fi
+  java -version
+}
