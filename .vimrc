@@ -64,6 +64,7 @@ set number
 set cursorline
 set laststatus=2 " Always show status bar
 set nowrap
+set colorcolumn=100
 
 " Buffers
 set hidden
