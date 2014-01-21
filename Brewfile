@@ -14,8 +14,8 @@ rbenv-default-gems
 rbenv-gem-rehash
 reattach-to-user-namespace
 ruby-build
-siege
 sqlite
+ssh-copy-id
 tmux
 tree
 vim
