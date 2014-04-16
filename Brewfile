@@ -4,6 +4,7 @@ bash-completion
 coreutils
 ctags
 curl
+gist
 git
 heroku-toolbelt
 node
