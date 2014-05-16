@@ -1,4 +1,5 @@
 ack
+archey
 bash
 bash-completion
 coreutils
