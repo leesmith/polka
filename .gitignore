@@ -18,7 +18,6 @@ Session.vim
 # ruby
 .rbenv-version
 .rvmrc
-.rspec
 
 # ctags
 tags
