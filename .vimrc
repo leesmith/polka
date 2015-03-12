@@ -30,6 +30,9 @@ set background=dark
 colorscheme solarized
 syntax on
 
+" Highlight breakpoints
+au BufEnter *.rb syn match error contained "\<binding.pry\>"
+
 " vim-airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
