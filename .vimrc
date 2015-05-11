@@ -144,6 +144,9 @@ nnoremap <localleader>ws m`:%s/\s\+$//e<CR>``
 " Remove trailing whitespace on save of ruby files
 au BufWritePre *.rb :%s/\s\+$//e
 
+" edit OSX crontab in-place
+autocmd FileType crontab setlocal nowritebackup
+
 "=============================================
 " Additional Config Files
 "=============================================
