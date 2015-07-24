@@ -9,7 +9,9 @@ gist
 git
 heroku-toolbelt
 node
+pgcli
 pidof
+postgresql
 python
 rbenv
 rbenv-default-gems
