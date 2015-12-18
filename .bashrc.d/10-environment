@@ -3,16 +3,10 @@
 EDITOR="vim"
 CLICOLOR=1
 HISTSIZE=10000
-HISTCONTROL=ignoredups:erasedups
-
-# After each command, save and reload history
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+HISTCONTROL=erasedups
 
 # Better globbing in bash
 shopt -s globstar
-
-# Append history entries
-shopt -s histappend
 
 # Disable Ctrl-s suspend terminal
 stty -ixon
@@ -38,4 +32,4 @@ fi
 
 prepend_path "${HOME}/bin"
 
-export EDITOR CLICOLOR HISTSIZE HISTCONTROL PROMPT_COMMAND
+export EDITOR CLICOLOR HISTSIZE HISTCONTROL
