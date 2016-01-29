@@ -7,6 +7,7 @@ kchmck vim-coffee-script
 kien ctrlp.vim
 mileszs ack.vim
 mustache vim-mustache-handlebars
+nathanaelkane vim-indent-guides
 pangloss vim-javascript
 tpope vim-bundler
 tpope vim-commentary
