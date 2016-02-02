@@ -1,6 +1,5 @@
 airblade vim-gitgutter
 altercation vim-colors-solarized
-bling vim-airline
 jgdavey tslime.vim
 jgdavey vim-turbux
 kchmck vim-coffee-script
@@ -22,5 +21,7 @@ tpope vim-ragtag
 tpope vim-rails
 tpope vim-repeat
 tpope vim-surround
+vim-airline vim-airline
+vim-airline vim-airline-themes
 vim-ruby vim-ruby
 vim-scripts matchit.zip
