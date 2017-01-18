@@ -1,0 +1,8 @@
+# vim:set ft=sh sw=2 ts=2 expandtab:
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  ANDROID_HOME="${HOME}/Library/Android/sdk"
+  export ANDROID_HOME
+  append_path "${ANDROID_HOME}/tools"
+  append_path "${ANDROID_HOME}/platform-tools"
+fi
