@@ -2,11 +2,17 @@
 
 Personal dotfile and development configuration
 
-![Alt text](http://i.imgur.com/pofXEzo.jpg)
-
 ## Notes
 
-### Upgrade Bash
+Install Homebrew
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Install homebrew packages with `brew bundle`
+
+### Upgrading Bash
 
 ```
 sudo echo /usr/local/bin/bash >> /etc/shells
