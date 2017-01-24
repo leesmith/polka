@@ -1,27 +1,27 @@
-ack
-archey
-bash
-bash-completion
-coreutils
-ctags
-curl
-gist
-git
-heroku-toolbelt
-node
-pgcli
-pidof
-postgresql
-python
-rbenv
-rbenv-default-gems
-rbenv-gem-rehash
-reattach-to-user-namespace
-ruby-build
-sqlite
-ssh-copy-id
-tmux
-tree
-vim
-watch
-wget
+brew 'ack'
+brew 'archey'
+brew 'bash'
+brew 'bash-completion'
+brew 'coreutils'
+brew 'ctags'
+brew 'curl'
+brew 'gist'
+brew 'git'
+brew 'heroku-toolbelt'
+brew 'node'
+brew 'pgcli'
+brew 'pidof'
+brew 'postgresql'
+brew 'python'
+brew 'rbenv'
+brew 'rbenv-default-gems'
+brew 'rbenv-gem-rehash'
+brew 'reattach-to-user-namespace'
+brew 'ruby-build'
+brew 'sqlite'
+brew 'ssh-copy-id'
+brew 'tmux'
+brew 'tree'
+brew 'vim'
+brew 'watch'
+brew 'wget'
