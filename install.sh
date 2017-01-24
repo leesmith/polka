@@ -60,4 +60,4 @@ find -L "${HOME}" "${HOME}/.bashrc.d" "${HOME}/bin" "${HOME}/lib" -maxdepth 1 -t
 (exec "${DIR}/bin/setup-gitconfig")
 (exec "${DIR}/bin/vim-bundle" "--confirm")
 
-echo "polka party was successful!"
+echo "🎉  polka party was successful! 🎉"
