@@ -1,13 +1,4 @@
---type-set=cucumber=.feature
---type-add=html=.haml,.erb,.rhtml
---type-add=ruby=.haml
---type-add=css=.scss,.sass
---type-add=js=.coffee
+--type-add=html=.haml
 
---ignore-dir=tmp
---ignore-dir=coverage
---ignore-dir=doc
---ignore-dir=vendor
---ignore-dir=stories
---ignore-dir=public/system
---ignore-dir=public/uploads
+--ignore-dir=is:bower_components
+--ignore-dir=is:node_modules
