@@ -170,6 +170,11 @@ call extend(g:rails_projections, {
       \   "test": "spec/presenter/%s_spec.rb",
       \   "alternate": "spec/presenter/%s_spec.rb",
       \   "template": "class %S\nend" },
+      \ "app/services/*.rb": {
+      \   "command": "service",
+      \   "test": "spec/service/%s_spec.rb",
+      \   "alternate": "spec/service/%s_spec.rb",
+      \   "template": "class %S\nend" },
       \ "app/workers/*.rb": {
       \   "command": "worker",
       \   "template": "class %S\nend" }
