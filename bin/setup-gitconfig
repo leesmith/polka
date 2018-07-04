@@ -46,8 +46,8 @@ global_config "alias.ff"    "merge --ff-only"
 global_config "alias.b"     "branch"
 global_config "alias.ba"    "branch -a"
 
-global_config "alias.ci"    "commit -v"
-global_config "alias.amend" "commit -v --amend"
+global_config "alias.ci"    "commit --verbose"
+global_config "alias.amend" "commit --verbose --amend --no-edit"
 
 global_config "alias.di"    "diff"
 global_config "alias.dc"    "diff --cached"
