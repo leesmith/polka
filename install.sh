@@ -39,15 +39,10 @@ for file in ${DIR}/lib/*; do
     ln -fs $file "${HOME}/lib/$(basename $file)"
 done
 
-[ -d "${HOME}/.vim/bundle" ] || mkdir -p "${HOME}/.vim/bundle"
+[ -d "${HOME}/.vim/pack" ]    || mkdir -p "${HOME}/.vim/pack/"
 [ -d "${HOME}/.vim/backups" ] || mkdir -p "${HOME}/.vim/backups"
 [ -d "${HOME}/.vim/swaps" ]   || mkdir -p "${HOME}/.vim/swaps"
 [ -d "${HOME}/.vim/undo" ]    || mkdir -p "${HOME}/.vim/undo"
-
-# Link bundle files in .vim
-for bundle in ${DIR}/.vim/*.bundle; do
-    ln -fs $bundle "${HOME}/.vim/$(basename $bundle)"
-done
 
 # Link rbenv default-gems
 [ -d "${HOME}/.rbenv" ] || mkdir "${HOME}/.rbenv"
@@ -58,6 +53,6 @@ find -L "${HOME}" "${HOME}/.bashrc.d" "${HOME}/bin" "${HOME}/lib" -maxdepth 1 -t
 
 # execute scripts on install
 (exec "${DIR}/bin/setup-gitconfig")
-(exec "${DIR}/bin/vim-bundle" "--confirm")
+(exec "${DIR}/bin/vim-minpac")
 
 echo "🎉  polka party was successful! 🎉"

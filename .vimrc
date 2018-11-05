@@ -7,15 +7,45 @@ scriptencoding utf-8
 " declare ruby path
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-" Load pathogen if it is found
-if filereadable(expand('~/.vim/bundle/vim-pathogen/autoload/pathogen.vim'))
-  source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-  execute pathogen#infect()
-endif
-
 " Start .vimrc
 set nocompatible
 filetype plugin indent on
+
+" minpac
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('jgdavey/tslime.vim')
+call minpac#add('jgdavey/vim-turbux')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('mileszs/ack.vim')
+call minpac#add('nathanaelkane/vim-indent-guides')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('posva/vim-vue')
+call minpac#add('tpope/vim-bundler')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-cucumber')
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-git')
+call minpac#add('tpope/vim-haml')
+call minpac#add('tpope/vim-markdown')
+call minpac#add('tpope/vim-pathogen')
+call minpac#add('tpope/vim-ragtag')
+call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-surround')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('vim-scripts/matchit.zip')
+
+" minpac utility commands
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
+command! PackStatus call minpac#status()
 
 "=============================================
 " Options
@@ -27,7 +57,9 @@ set encoding=utf-8
 " Color
 set t_Co=256
 set background=dark
-colorscheme solarized
+if isdirectory($HOME . "/.vim/pack/minpac/start/vim-colors-solarized")
+  colorscheme solarized
+endif
 syntax on
 
 " Highlight breakpoints
