@@ -55,4 +55,4 @@ find -L "${HOME}" "${HOME}/.bashrc.d" "${HOME}/bin" "${HOME}/lib" -maxdepth 1 -t
 (exec "${DIR}/bin/setup-gitconfig")
 (exec "${DIR}/bin/vim-minpac")
 
-echo "🎉  polka party was successful! 🎉"
+echo "Installation was successful! 🎉"
