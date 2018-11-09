@@ -13,39 +13,51 @@ filetype plugin indent on
 
 " minpac
 packadd minpac
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('altercation/vim-colors-solarized')
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('jgdavey/tslime.vim')
-call minpac#add('jgdavey/vim-turbux')
-call minpac#add('kien/ctrlp.vim')
-call minpac#add('mileszs/ack.vim')
-call minpac#add('nathanaelkane/vim-indent-guides')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('posva/vim-vue')
-call minpac#add('tpope/vim-bundler')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('tpope/vim-cucumber')
-call minpac#add('tpope/vim-endwise')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-git')
-call minpac#add('tpope/vim-haml')
-call minpac#add('tpope/vim-markdown')
-call minpac#add('tpope/vim-pathogen')
-call minpac#add('tpope/vim-ragtag')
-call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-surround')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('vim-scripts/matchit.zip')
 
-" minpac utility commands
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
-command! PackStatus call minpac#status()
+if exists('*minpac#init')
+  call minpac#init({'verbose': 3})
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('altercation/vim-colors-solarized')
+  call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('jgdavey/tslime.vim')
+  call minpac#add('jgdavey/vim-turbux')
+  call minpac#add('mileszs/ack.vim')
+  call minpac#add('nathanaelkane/vim-indent-guides')
+  call minpac#add('pangloss/vim-javascript')
+  call minpac#add('posva/vim-vue')
+  call minpac#add('tpope/vim-bundler')
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-endwise')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-markdown')
+  call minpac#add('tpope/vim-ragtag')
+  call minpac#add('tpope/vim-rails')
+  call minpac#add('tpope/vim-rake')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('vim-airline/vim-airline')
+  call minpac#add('vim-airline/vim-airline-themes')
+  call minpac#add('vim-ruby/vim-ruby')
+  call minpac#add('vim-scripts/matchit.zip')
+
+  " minpac utility commands
+  command! PackUpdate call minpac#update()
+  command! PackClean call minpac#clean()
+  command! PackStatus call minpac#status()
+
+  " use solarized for colorscheme
+  if isdirectory($HOME . "/.vim/pack/minpac/start/vim-colors-solarized")
+    colorscheme solarized
+  endif
+
+  " vim-airline
+  let g:airline_powerline_fonts=1
+  let g:airline_theme='solarized'
+
+  " set sign column for vim-gitgutter
+  highlight SignColumn ctermbg=8
+endif
 
 "=============================================
 " Options
@@ -57,17 +69,10 @@ set encoding=utf-8
 " Color
 set t_Co=256
 set background=dark
-if isdirectory($HOME . "/.vim/pack/minpac/start/vim-colors-solarized")
-  colorscheme solarized
-endif
 syntax on
 
 " Highlight breakpoints
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
-
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='solarized'
 
 " Turn off error bells
 set noerrorbells
@@ -136,9 +141,6 @@ set noesckeys
 
 " Set tags file search order
 set tags=./tags;
-
-" set sign column for vim-gitgutter
-highlight SignColumn ctermbg=8
 
 "=============================================
 " Remaps
@@ -252,13 +254,13 @@ call extend(g:rails_gem_projections, {
       \     "test": "spec/models/%s_spec.rb",
       \     "template": "Fabricator :%s do\nend",
       \     "affinity": "model"}},
-      \ "factory_girl": {
-      \   "spec/factories/*_factory.rb": {
+      \ "factory_bot": {
+      \   "spec/factories/*.rb": {
       \     "command": "factory",
       \     "alternate": "app/models/%s.rb",
       \     "related": "db/schema.rb#%p",
       \     "test": "spec/models/%s_spec.rb",
-      \     "template": "FactoryGirl.define do\n  factory :%s do\n  end\nend",
+      \     "template": "FactoryBot.define do\n  factory :%s do\n  end\nend",
       \     "affinity": "model"},
       \   "spec/factories.rb": {
       \      "command": "factory"},
