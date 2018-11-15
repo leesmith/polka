@@ -27,6 +27,7 @@ if exists('*minpac#init')
   call minpac#add('nathanaelkane/vim-indent-guides')
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('posva/vim-vue')
+  call minpac#add('prettier/vim-prettier')
   call minpac#add('tpope/vim-bundler')
   call minpac#add('tpope/vim-commentary')
   call minpac#add('tpope/vim-endwise')
@@ -58,6 +59,16 @@ if exists('*minpac#init')
 
   " set sign column for vim-gitgutter
   highlight SignColumn ctermbg=8
+
+  " Prettier: run before saving (async)
+  " let g:prettier#autoformat = 0
+  " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+  " Prettier: print spaces between brackets
+  let g:prettier#config#bracket_spacing = 'true'
+
+  " Prettier: single quotes over double quotes
+  let g:prettier#config#single_quote = 'true'
 endif
 
 "=============================================
